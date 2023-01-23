@@ -49,6 +49,14 @@ def delete_histo():
     global historique
     historique.clear()
 "------------------------------------------------------------------------------------------------------------------"
+def sqrt(x):
+    last_guess= x/2.0
+    while True:
+        guess= (last_guess + x/last_guess)/2
+        if abs(guess - last_guess) < .000001:
+            return guess
+        last_guess= guess
+"------------------------------------------------------------------------------------------------------------------"
 #paramètres tkinter
 nomApp = Label(gui,text="CALCULATOR 9000",font=("Courier",25,"bold"),fg="black")
 nomApp.place(x=20, y=20)
@@ -101,11 +109,11 @@ div.place(x=250, y=340)
 pourc = Button (gui, text='%',command=lambda:cala("%"), font=("Courier", 20),bg="grey", width=4, height=1)
 pourc.place(x=10, y=280)
 
-rac = Button (gui, text='√',command=lambda:cala(), font=("Courier", 20),bg="grey", width=4, height=1)
-rac.place(x=90, y=280)
-
 dot = Button (gui, text='.',command=lambda:cala("."), font=("Courier", 20),bg="grey", width=4, height=1)
 dot.place(x=170, y=520)
+
+rac = Button (gui, text='√', font=("Courier", 20),bg="grey", width=4, height=1)
+rac.place(x=90, y=280)
 
 eg = Button (gui, text='=',command=faire_cala, font=("Courier", 20), width=4, height=1, bg="#81FFFF")
 eg.place(x=250, y=520)
